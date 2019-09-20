@@ -30,6 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -38,6 +41,54 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }, 
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "stg": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stg.ts"
                 }
               ],
               "optimization": true,
@@ -67,6 +118,12 @@
           "configurations": {
             "production": {
               "browserTarget": "ngx-starter:build:production"
+            },
+            "dev": {
+              "browserTarget": "ngx-starter:build:dev"
+            },
+            "stg": {
+              "browserTarget": "ngx-starter:build:stg"
             }
           }
         },
@@ -115,6 +172,12 @@
           "configurations": {
             "production": {
               "devServerTarget": "ngx-starter:serve:production"
+            },
+            "dev": {
+              "devServerTarget": "ngx-starter:serve:dev"
+            },
+            "stg": {
+              "devServerTarget": "ngx-starter:serve:stg"
             }
           }
         }

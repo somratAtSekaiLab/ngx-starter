@@ -1,0 +1,43 @@
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label appHasError [control]="formControls['email']" for="email">Email <span class="required"></span></label>
+      <input formControlName="email" type="email" class="form-control " id="email" aria-describedby="mailHelp" placeholder="Enter email">
+      <app-validation-message 
+        [control]="formControls['email']"
+        [customMessages]="{'pattern': 'Please enter a valid email address'}">
+      </app-validation-message>
+    </div>
+    <div class="form-group">
+      <label appHasError [control]="formControls['password']" for="pass1">New Password <span class="required"></span></label>
+      <input formControlName="password" type="password" class="form-control " id="pass1" aria-describedby="passHelp" placeholder="New Password">
+      <app-validation-message 
+        [control]="formControls['password']"
+        [customMessages]="{'pattern': 'Password must be at least 6 alphanumeric characters'}">
+      </app-validation-message>
+    </div>
+    <div class="form-group">
+      <label appHasError [control]="formControls['confirm_password']" for="pass2">Retype Password <span class="required"></span></label>
+      <input formControlName="confirm_password" type="password" class="form-control ng-invalid" id="pass2" aria-describedby="passHelp2" placeholder="New Password again">
+      <app-validation-message 
+        [control]="formControls['confirm_password']"
+        [customMessages]="{'pattern': 'Password must be at least 6 alphanumeric characters', 
+                          'equalTo': 'These passwords doesn\'t match'}">
+      </app-validation-message>
+    </div>
+    <div class="form-group">
+      <div class="checkbox-wrap">
+        <input formControlName="is_agreed" id="checkboxId" type="checkbox" class="">
+        <label for="checkboxId">
+          &nbsp; I agree with the <a href="javascript:;">terms of service</a> and <a href="javascript:;">privacy policy.</a>
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!form.valid || isSubmitted" class="btn btn-primary btn-block">Sign up now</button>
+    </div>
+    <div class="form-group remember-pass">
+      <p>Already have an account? <span><a routerLink="/login">Login Here</a></span></p>
+    </div>
+  </form>
+

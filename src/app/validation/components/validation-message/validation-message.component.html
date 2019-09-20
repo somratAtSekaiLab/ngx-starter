@@ -1,0 +1,8 @@
+<ng-container [ngSwitch]="template">
+  <ng-container *ngSwitchCase="1">
+    <div class="alert alert-danger" *ngIf="errorMessage !== null" [innerHtml]="errorMessage"></div>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <small *ngIf="errorMessage !== null" [innerHtml]="errorMessage" class="text-danger"></small>
+  </ng-container>
+</ng-container>

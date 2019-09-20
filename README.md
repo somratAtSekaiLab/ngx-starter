@@ -1,18 +1,42 @@
 # NgxStarter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version version 8.0.2.
+
+## Api documentation server
+
+Command to run api documentation server
+  ```shell
+  npm run docs
+  ```
+
+Navigate to `http://localhost:4201/` for documentation
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run 
+```shell 
+ng serve
+```
+for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run 
+```shell 
+ng generate component component-name
+``` 
+to generate a new component. You can also use
+ ```shell
+ ng generate directive|pipe|service|class|guard|interface|enum|module
+ ```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run 
+```shell
+ng build --configuration=production --prod --aot=true 
+``` 
+To build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. Use `production`, `dev` or `stg` for conguration
 
 ## Running unit tests
 
