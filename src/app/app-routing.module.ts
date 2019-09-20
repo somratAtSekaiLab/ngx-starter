@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IsDevOnlyGuard, IsLoggedInGuard } from '@app/core';
-import { PageModule } from '@app/page';
+import { IsDevOnlyGuard, IsLoggedInGuard } from './core';
+import { PageModule } from './page';
 
-import * as pageComponents from '@app/page/components';
+import * as pageComponents from './page/components';
 
 const routes: Routes = [{
   path: 'static',
