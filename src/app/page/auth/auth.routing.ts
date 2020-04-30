@@ -4,11 +4,11 @@ import { IsLoggedOutGuard } from '@app/core';
 export const authRoutes: Routes = [
   {
     path: 'login',
-    loadChildren: './auth/login/login.module#LoginModule',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
     canActivate: [IsLoggedOutGuard]
   }, {
     path: 'registration',
-    loadChildren: './auth/registration/registration.module#RegistrationModule',
+    loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule),
     canActivate: [IsLoggedOutGuard]
   }
 ];

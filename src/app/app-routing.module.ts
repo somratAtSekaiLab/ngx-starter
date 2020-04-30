@@ -7,14 +7,14 @@ import * as pageComponents from './page/components';
 
 const routes: Routes = [{
   path: 'static',
-  loadChildren: './static/static.module#StaticModule',
+  loadChildren: () => import('./static/static.module').then(m => m.StaticModule),
   canActivate: [IsDevOnlyGuard]
 }, {
   path: '',
-  loadChildren: './page/page.module#PageModule'
+  loadChildren: () => import('./page/page.module').then(m => m.PageModule)
 }, {
   path: 'dashboard',
-  loadChildren: './dashboard/dashboard.module#DashboardModule',
+  loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
   canActivate: [IsLoggedInGuard]
 }, {
   path: 'error',
